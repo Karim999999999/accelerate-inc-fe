@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "athlete 1",
+    "age": 30
+  },
+  {
+    "id": 2,
+    "name": "athlete 2",
+    "age": 30
+  },
+  {
+    "id": 3,
+    "name": "athlete 3",
+    "age": 30
+  },
+  {
+    "id": 4,
+    "name": "athlete 4",
+    "age": 30
+  },
+  {
+    "id": 5,
+    "name": "athlete 5",
+    "age": 30
+  },
+  {
+    "id": 6,
+    "name": "athlete 6",
+    "age": 30
+  }
+]
