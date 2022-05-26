@@ -1,9 +1,10 @@
 import axios from 'axios';
+import baseUrl from '../config.js';
 
 export const getAllAthletesPrivate = async () => {
   const options = {
     method: 'GET',
-    url: '/api/athletes',
+    url: `${baseUrl}/athletes`,
     headers: {
       authorization: `Bearer ${window.sessionStorage.getItem('token')}`,
     },
@@ -16,7 +17,7 @@ export const getAllAthletesPrivate = async () => {
 export const getApprovedAthletesPublic = async () => {
   const options = {
     method: 'GET',
-    url: '/api/approved-athletes',
+    url: `${baseUrl}/approved-athletes`,
   };
 
   const { data } = await axios.request(options);
@@ -27,7 +28,7 @@ export const getApprovedAthletesPublic = async () => {
 export const getAthletesByStatusPrivate = async (status) => {
   const options = {
     method: 'GET',
-    url: `/api/manage/athletes/status/${status}`,
+    url: `${baseUrl}/manage/athletes/status/${status}`,
     headers: {
       authorization: `Bearer ${window.sessionStorage.getItem('token')}`,
     },
@@ -39,7 +40,7 @@ export const getAthletesByStatusPrivate = async (status) => {
 export const createNewAthlete = async (formData) => {
   const options = {
     method: 'PUSH',
-    url: '/api/athletes',
+    url: `${baseUrl}/athletes`,
     data: formData,
   };
   const { data } = await axios.request(options);
@@ -50,7 +51,7 @@ export const createNewAthlete = async (formData) => {
 export const getAthletesByIdPrivate = async (athleteId) => {
   const options = {
     method: 'GET',
-    url: `/api/athlete/${athleteId}`,
+    url: `${baseUrl}/athlete/${athleteId}`,
     headers: {
       authorization: `Bearer ${window.sessionStorage.getItem('token')}`,
     },

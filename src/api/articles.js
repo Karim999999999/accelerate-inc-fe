@@ -1,34 +1,34 @@
 import axios from 'axios';
-
+import baseUrl from '../config.js';
 const getAllArticles = () =>
   axios.request({
     method: 'GET',
-    url: '/api/articles',
+    url: `${baseUrl}/articles`,
   });
 
-const getArticlesByCategory = category =>
+const getArticlesByCategory = (category) =>
   axios
     .request({
       method: 'GET',
-      url: '/api/articles',
+      url: `${baseUrl}/articles`,
       params: { 'categories[in]': category },
     })
     .then(({ data }) => data.data);
 
-const getAllArticlesByStatus = status =>
+const getAllArticlesByStatus = (status) =>
   axios
     .request({
       method: 'GET',
-      url: '/api/articles',
+      url: `${baseUrl}/articles`,
       params: { status },
     })
-    .then(data => data.data);
+    .then((data) => data.data);
 
-const getArticleById = id =>
+const getArticleById = (id) =>
   axios
     .request({
       method: 'GET',
-      url: `/api/articles/${id}`,
+      url: `${baseUrl}/articles/${id}`,
     })
     .then(({ data }) => data);
 

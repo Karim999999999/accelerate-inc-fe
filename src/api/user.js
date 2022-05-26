@@ -1,23 +1,10 @@
 import axios from 'axios';
+import baseUrl from '../config';
 
-export const getAllUsers = async () => {
+export const getAllUsers = async (id) => {
   const options = {
     mehtod: 'GET',
-    url: '/api/users',
-    headers: {
-      authorization: `Bearer ${window.sessionStorage.getItem('token')}`,
-    },
-  };
-
-  const { data } = await axios.request(options);
-
-  return data;
-};
-
-export const getUserById = async (id) => {
-  const options = {
-    method: 'GET',
-    url: `/users/${id}`,
+    url: `${baseUrl}/users/${id}`,
     headers: {
       authorization: `Bearer ${window.sessionStorage.getItem('token')}`,
     },
@@ -30,7 +17,7 @@ export const getUserById = async (id) => {
 export const createUser = async () => {
   const options = {
     method: 'POST',
-    url: '/api/users',
+    url: `${baseUrl}/user`,
     headers: {
       authorization: `Bearer ${window.sessionStorage.getItem('token')}`,
     },
@@ -44,7 +31,7 @@ export const createUser = async () => {
 export const updateUser = async (id) => {
   const options = {
     method: 'PUT',
-    url: `/api/${id}`,
+    url: `${baseUrl}/${id}`,
     headers: {
       authorization: `Bearer ${window.sessionStorage.getItem('token')}`,
     },
@@ -58,7 +45,7 @@ export const updateUser = async (id) => {
 export const deleteUser = async (id) => {
   const options = {
     method: 'DELETE',
-    url: `/api/users/${id}`,
+    url: `${baseUrl}/users/${id}`,
     headers: {
       authorization: `Bearer ${window.sessionStorage.getItem('token')}`,
     },
